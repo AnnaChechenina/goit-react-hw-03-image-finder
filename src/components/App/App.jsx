@@ -25,6 +25,7 @@ class App extends Component {
     const { query, page } = this.state;
     if (prevState.page !== page || prevState.query !== query) {
       this.setState({ isLoading: true });
+
       fetchImages(query, page)
         .then(({ images, totalImages }) => {
           if (!images.length) {
@@ -38,14 +39,13 @@ class App extends Component {
             };
           });
         })
-
         .catch(error => this.setState({ error: error.message }))
         .finally(() => this.setState({ isLoading: false }));
     }
   }
 
   getSearchRequest = query => {
-    this.setState({ query });
+    this.setState({ query, page: 1, images: [], totalImages: 0 });
   };
 
   onNextFetch = () => {
