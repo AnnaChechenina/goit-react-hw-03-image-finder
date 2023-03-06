@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import fetchImages from '../../services/image-api';
+import { fetchImages } from 'services/image-api';
 import Searchbar from 'components/Searchbar/';
 import ImageGallery from 'components/ImageGallery';
 import Modal from 'components/Modal/Modal';
@@ -15,10 +15,10 @@ class App extends Component {
     totalImages: 0,
     isLoading: false,
     showModal: false,
-    images: null,
+    images: [],
     error: null,
-    currentImageUrl: null,
-    currentImageDescription: null,
+    currentImageUrl: [],
+    currentImageDescription: [],
   };
 
   componentDidUpdate(_, prevState) {
@@ -29,7 +29,7 @@ class App extends Component {
       fetchImages(query, page)
         .then(({ images, totalImages }) => {
           if (!images.length) {
-            toast.info('no images');
+            toast.info('Sorry, there are no images');
             return;
           }
           return this.setState(prevState => {

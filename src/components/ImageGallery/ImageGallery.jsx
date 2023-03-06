@@ -4,10 +4,10 @@ import css from './ImageGallery.module.css';
 function ImageGallery({ images, openModal }) {
   return (
     <ul className={css.container}>
-      {images.map(({ id, description, smallImage, largeImage }) => (
+      {images.map(({ id, tags, smallImage, largeImage }) => (
         <ImageGalleryItem
           key={id}
-          description={description}
+          tags={tags}
           smallImage={smallImage}
           largeImage={largeImage}
           openModal={openModal}
@@ -21,10 +21,10 @@ ImageGallery.prototype = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      description: PropTypes.string,
+      tags: PropTypes.string,
       smallImage: PropTypes.string.isRequired,
       largeImage: PropTypes.string.isRequired,
-    })
+    }).isRequired
   ).isRequired,
 };
 export default ImageGallery;
