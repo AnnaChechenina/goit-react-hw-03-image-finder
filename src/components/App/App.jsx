@@ -53,12 +53,12 @@ class App extends Component {
   };
 
   toggleModal = () => {
-    this.setState(({ showModal }) => ({ showModal: !showModal }));
+    this.setState(({ showModal }) => ({ showModal: showModal }));
   };
 
   openModal = evt => {
     const currentImageUrl = evt.target.dataset.large;
-    const currentImageDescription = evt.target.alt;
+    const currentImageDescription = evt.target.tags;
 
     if (evt.target.nodeName === 'IMG') {
       this.setState(({ showModal }) => ({

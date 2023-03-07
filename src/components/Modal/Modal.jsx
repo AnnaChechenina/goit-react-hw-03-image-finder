@@ -6,13 +6,6 @@ import css from './Modal.module.css';
 const modalRoot = document.querySelector('#modal-root');
 
 class Modal extends Component {
-  static propTypes = {
-    title: PropTypes.string,
-    onClose: PropTypes.func.isRequired,
-    currentImageUrl: PropTypes.string,
-    currentImageDescription: PropTypes.string,
-  };
-
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
   }
@@ -57,4 +50,10 @@ class Modal extends Component {
     );
   }
 }
+Modal.propTypes = {
+  title: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+  currentImageUrl: PropTypes.string.isRequired,
+  currentImageDescription: PropTypes.string.isRequired,
+};
 export default Modal;
