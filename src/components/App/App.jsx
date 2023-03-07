@@ -17,8 +17,8 @@ class App extends Component {
     showModal: false,
     images: [],
     error: null,
-    currentImageUrl: [],
-    currentImageDescription: [],
+    currentImageUrl: null,
+    currentImageDescription: null,
   };
 
   componentDidUpdate(_, prevState) {
