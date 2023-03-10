@@ -15,9 +15,6 @@
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
   position: relative;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   background-color: var(--main-bg-color);
 }
 .wrapper {
@@ -34,10 +31,10 @@
 }
 
 .button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-
+  margin-left: 750px;
   width: 30px;
   height: 20px;
   padding: 0;
@@ -54,9 +51,10 @@
 
 .button:hover,
 .button:focus {
-  color: var(--accent-bg-color);
+  color: white;
+  background-color: blue;
 }
 .icon {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
 }

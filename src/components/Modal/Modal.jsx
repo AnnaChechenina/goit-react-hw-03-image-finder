@@ -27,14 +27,12 @@ class Modal extends Component {
   };
 
   render() {
-    const { title, onClose, currentImageUrl, currentImageDescription } =
-      this.props;
+    const { onClose, currentImageUrl, currentImageDescription } = this.props;
 
     return createPortal(
       <div className={css.overlay} onClick={this.handleClickOverlay}>
         <div className={css.modal}>
           <div className={css.wrapper}>
-            {title && <h1 className={css.title}>{title}</h1>}
             <button className={css.button} type="button" onClick={onClose}>
               <BsXLg className={css.icon} />
             </button>
@@ -51,9 +49,8 @@ class Modal extends Component {
   }
 }
 Modal.propTypes = {
-  title: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
   currentImageUrl: PropTypes.string.isRequired,
-  currentImageDescription: PropTypes.string.isRequired,
+  currentImageDescription: PropTypes.string,
 };
 export default Modal;

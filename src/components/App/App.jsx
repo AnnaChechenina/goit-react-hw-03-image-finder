@@ -17,7 +17,7 @@ class App extends Component {
     showModal: false,
     images: [],
     error: null,
-    currentImageUrl: null,
+    currentImageUrl: [null],
     currentImageDescription: null,
   };
 
@@ -53,7 +53,7 @@ class App extends Component {
   };
 
   toggleModal = () => {
-    this.setState(({ showModal }) => ({ showModal: showModal }));
+    this.setState(({ showModal }) => ({ showModal: !showModal }));
   };
 
   openModal = evt => {
